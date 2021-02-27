@@ -1,6 +1,6 @@
 /* CORE STYLES */
 :root {
-    --primary-color: rgba(13, 110, 139, 0.75);
+    --primary-color: rgb(13, 110, 139);
     --overlay-color: rgba(15, 23, 29, 0.85);
     /* --overlay-color:rgb(9, 11, 37); */
     --menu-speed: 0.75s;
@@ -62,7 +62,8 @@
   .btn {
     display: inline-block;
     border: none;
-    background: black;
+    /* background:transparent; */
+    background:black;
     color: #fff;
     padding: 0.75rem 1.5rem;
     margin-top: 1rem;
@@ -101,7 +102,8 @@
     width: 60px;
     height: 60px;
     padding: 1rem;
-    background: black;
+  /*  backround of button */
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;

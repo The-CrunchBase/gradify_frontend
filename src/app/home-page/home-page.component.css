@@ -12,11 +12,19 @@
   position: fixed;
   top: 30%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 80px;
+  transform: translate(-50%);
+  text-align:justify;
+  font-size: 70px;
   color: white;
 }
 
+.pacificofont{
+  font-family: pacifico;
+  font-size: 50px;
+}
+.straightfont{
+  font-size: 50px;
+}
 /* Add some content at the bottom of the video/page */
 .content {
   position: fixed;
@@ -72,7 +80,7 @@ form input{
   #SEL{
     width:50%;
     text-align:center;
-    margin-left: 25%;
+    margin-left: 55%;
   }
   #heading{
     font-size: 10px;
@@ -87,6 +95,6 @@ form input{
   #load_msg{
     margin-left: 47%;
     top:500px;
-    position:fixed;
+    /* position:fixed; */
   }
 }

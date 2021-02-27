@@ -6,9 +6,14 @@ footer
     width: 100%;
     padding:0px;
     background-color: gainsboro;
+    background: transparent;
     color: black;
     text-align: center;
 }
+/* .devs .footer{
+    col
+} */
+
 a,u
 {
     color: black;
