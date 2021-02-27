@@ -11,18 +11,12 @@
 .intro h1 {
   position: fixed;
   top: 30%;
-  left:60%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 50px;
-  color: whitesmoke;
+  font-size: 80px;
+  color: white;
 }
 
-.italic {
-  font-family: "Pacifico";
-}
-.straight {
-  font-family: "Courier New", Courier, monospace;
-}
 /* Add some content at the bottom of the video/page */
 .content {
   position: fixed;
@@ -32,23 +26,67 @@
   height: 200%;
 }
 
-/* Form */
-input.ng-invalid {
-  border-left: 5px solid red;
+ /* Form */
+input.ng-invalid{
+  border-left : 5px solid red
 }
-input.ng-valid {
-  border-left: 5px solid green;
+input.ng-valid{
+  border-left : 5px solid green
 }
 
+form input{
+  width:70%;
+  text-align:center;
+  margin-left: 10%;
+}
+
+#video-bg{
+  z-index: -1;
+}
+#SEL{
+  width:70%;
+  text-align:center;
+  margin-left: 10%;
+}
+
+#btn{
+  margin-left: 10%;
+
+}
+#leb{
+  margin-left: 10%;
+
+}
+
+#load_msg{
+  margin-left: 10%;
+  top:550px;
+  position:fixed;
+}
 @media screen and (max-width: 500px) {
-  form input {
-    width: 50%;
-    text-align: center;
+  form input{
+    width:50%;
+    text-align:center;
     margin-left: 25%;
   }
-  form select {
-    width: 50%;
-    text-align: center;
+  #SEL{
+    width:50%;
+    text-align:center;
     margin-left: 25%;
+  }
+  #heading{
+    font-size: 10px;
+  }
+  #btn{
+    margin-left: 25%;
+
+  }
+  #leb{
+    margin-left: 25%;
+  }
+  #load_msg{
+    margin-left: 47%;
+    top:500px;
+    position:fixed;
   }
 }
