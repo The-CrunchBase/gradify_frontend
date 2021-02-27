@@ -1,0 +1,54 @@
+.intro {
+  height: 100vh;
+}
+
+.intro video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.intro h1 {
+  position: fixed;
+  top: 30%;
+  left:60%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  color: whitesmoke;
+}
+
+.italic {
+  font-family: "Pacifico";
+}
+.straight {
+  font-family: "Courier New", Courier, monospace;
+}
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  top: 40%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+}
+
+/* Form */
+input.ng-invalid {
+  border-left: 5px solid red;
+}
+input.ng-valid {
+  border-left: 5px solid green;
+}
+
+@media screen and (max-width: 500px) {
+  form input {
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+  }
+  form select {
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+  }
+}

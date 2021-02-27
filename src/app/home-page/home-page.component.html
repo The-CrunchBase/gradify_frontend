@@ -1,0 +1,62 @@
+ <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<!-- Background Video -->
+<div class="intro">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <h1>
+    <span class="pacificofont">gradify</span>
+    <span class="straightfont">| CrunchBase</span>
+  </h1>
+  <video onended="run()" autoplay id="video-bg">
+    <source src="assets/videos/Solar System.mp4" type="video/mp4">
+  </video>
+  <div class="content">
+    <div class="container">
+
+      <br>
+
+      <form #gradeForm="ngForm" (ngSubmit)="onSubmit(gradeForm)">
+        <div *ngIf="show" class="alert alert-info alert-dismissible">
+          <a (click)="onClose()" class="close" data-dismiss="alert"
+            aria-label="close">&times;</a>
+          <strong>Wow!</strong> Your SGPA is {{ sgpa }}
+        </div>
+        <br>
+        <div class="form-group">
+          <label style="color:aqua" for="reg">Registration Number</label>
+          <input #reg="ngModel" pattern="\d\d\d\d\w\w\w\d\d\d" required
+            type="text" class="form-control"
+            id="reg" aria-describedby="reg" placeholder="Enter Your Registration Number" ngModel name="reg">
+          <span *ngIf="reg.invalid && reg.touched" style="color:red"><b>**Please
+              Enter Your Correct Registration Number</b></span>
+        </div>
+        <br>
+        <label style="color:aqua" for="sem">Select Semester</label>
+        <div class="select" class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">SEMESTER</label>
+          </div>
+          <select required name="sem" ngModel class="custom-select"
+            id="inputGroupSelect01">
+            <option *ngFor="let sem of semList" value="{{ sem.sem }}">{{
+              sem.sem }}</option>
+          </select>
+        </div>
+        <button type="submit" [disabled]="gradeForm.invalid" class="btn
+          btn-primary">Calculate</button>
+        <div *ngIf="load">
+          <p style="color:green;position:fixed;top:520px;margin-left:200px" class="title"><b>**Please
+              Wait ! Your result is being calculating...</b></p>
+        </div>
+
+
+      </form>
+
+    </div>
+  </div>
+</div>
+<!-- Background Video -->
+
+<router-outlet></router-outlet>

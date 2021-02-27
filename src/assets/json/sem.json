@@ -1,0 +1,34 @@
+[
+  {
+    "sem": "SEM1",
+    "year": "First Year"
+  },
+  {
+    "sem": "SEM2",
+    "year": "First Year"
+  },
+  {
+    "sem": "SEM3",
+    "year": "Second Year"
+  },
+  {
+    "sem": "SEM4",
+    "year": "Second Year"
+  },
+  {
+    "sem": "SEM5",
+    "year": "Third Year"
+  },
+  {
+    "sem": "SEM6",
+    "year": "Third Year"
+  },
+  {
+    "sem": "SEM7",
+    "year": "Final Year"
+  },
+  {
+    "sem": "SEM8",
+    "year": "Final Year"
+  }
+]

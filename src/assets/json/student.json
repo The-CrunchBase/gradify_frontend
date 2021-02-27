@@ -1,0 +1,38 @@
+[
+  {
+    "course": "Django 2.0",
+    "language": "English",
+    "speaker": "Justin Mitchel",
+    "t_lectures": "48",
+    "image": "assets/images/django.jpg",
+    "level": "Beginner",
+    "link": "Django 2.0 -by Justin Mitchel"
+  },
+  {
+    "course": "Machine Learning Course",
+    "language": "Hindi",
+    "speaker": "Sourabh Shukla",
+    "t_lectures": "41",
+    "image": "assets/images/ML.png",
+    "level": "Beginner",
+    "link": "Machine Learning -by Sourabh Shukla"
+  },
+  {
+    "course": "ReactJS Tutorial for Beginners",
+    "language": "English",
+    "speaker": "CodeEvolution",
+    "t_lectures": "76",
+    "image": "assets/images/react.png",
+    "level": "Beginner",
+    "link": "ReactJS -by CodeEvolution"
+  },
+  {
+    "course": "Python Tutorial for Beginners",
+    "language": "Hindi",
+    "speaker": "Telusko",
+    "t_lectures": "85",
+    "image": "assets/images/telusko.jpeg",
+    "level": "Beginner",
+    "link": "Python -by Telusko"
+  }
+]
