@@ -1,37 +1,48 @@
- <head>
+<head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+    rel="stylesheet">
 </head>
-<!-- Background Video -->
 <div class="intro">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <h1>
     <span class="pacificofont">gradify&nbsp;</span>
     <span class="straightfont">| CrunchBase</span>
   </h1>
-  <video onended="run()" autoplay id="video-bg">
+  <!-- Background Video -->
+  <video onended="run()" autoplay id="video-bg" oncanplay="this.play()"
+    onloadedmetadata="this.muted= true">
     <source src="assets/videos/Solar System.mp4" type="video/mp4">
   </video>
+  <!-- Background Video -->
+
   <div class="content">
     <div class="container">
-
       <br>
-
+      <!-- Form -->
       <form #gradeForm="ngForm" (ngSubmit)="onSubmit(gradeForm)">
+        <!-- Model Form -->
         <div *ngIf="show" class="alert alert-info alert-dismissible">
           <a (click)="onClose()" class="close" data-dismiss="alert"
             aria-label="close">&times;</a>
           <strong>Wow!</strong> Your SGPA is {{ sgpa }}
         </div>
+        <!-- Model Form -->
+
         <br>
+        <!-- Registration Number Input -->
         <div class="form-group">
           <label id="leb" style="color:aqua" for="reg">Registration Number</label>
           <input #reg="ngModel" pattern="\d\d\d\d\w\w\w\d\d\d" required
             type="text" class="form-control"
-            id="reg" aria-describedby="reg" placeholder="Enter Your Registration Number" ngModel name="reg">
+            id="reg" aria-describedby="reg" placeholder="Enter Your Registration
+            Number" ngModel name="reg">
           <span id="leb" *ngIf="reg.invalid && reg.touched" style="color:red"><b>**Please
               Enter Your Correct Registration Number</b></span>
         </div>
+        <!-- Registration Number Input -->
+
+        <!-- Select Semester -->
         <label id="leb" style="color:aqua" for="sem">Select Semester</label>
         <div id="SEL" class="select" class="input-group mb-3">
           <div class="input-group-prepend">
@@ -43,39 +54,20 @@
               sem.sem }}</option>
           </select>
         </div>
+        <!-- Select Semester -->
+
+        <!-- Submit Button -->
         <button id="btn" type="submit" [disabled]="gradeForm.invalid" class="btn
           btn-primary">Calculate</button>
         <div *ngIf="load">
           <p id="load_msg" style="color:green"><b>**Please
               Wait ! Your result is being calculating...</b></p>
         </div>
+        <!-- Submit Button -->
 
-        <!-- Trigger the modal with a button -->
-        <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
-      
-        <!-- Modal -->
-        <!-- <div *ngIf="load" data-toggle="modal" data-target="#myModal">
-        <div class="modal fade" id="myModal" role="dialog">
-          <div class="modal-dialog">
-          
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-              </div>
-              <div class="modal-body">
-                <p><strong>Wow!</strong> Your SGPA is {{ sgpa }}</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" (click)="onClose()" data-dismiss="modal">Close</button>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </div> -->
-        <!-- Modal -->
+
       </form>
-
+      <!-- Form -->
     </div>
   </div>
 </div>
