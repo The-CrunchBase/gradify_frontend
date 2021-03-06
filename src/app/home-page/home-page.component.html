@@ -22,15 +22,15 @@
       <!-- Form -->
       <form #gradeForm="ngForm" (ngSubmit)="onSubmit(gradeForm)">
         <!-- Model Form -->
-        <div *ngIf="show" class="alert alert-info alert-dismissible">
-          <a (click)="onClose()" class="close" data-dismiss="alert"
-            aria-label="close">&times;</a>
-          <strong>Wow!</strong> Your SGPA is {{ sgpa }}
+        <div *ngIf="show" >
+          <div class="fancy">Your SGPA is {{sgpa}}</div>
+
         </div>
         <!-- Model Form -->
 
         <br>
         <!-- Registration Number Input -->
+        <div *ngIf="show===false" >
         <div class="form-group">
           <label id="leb" style="color:aqua" for="reg">Registration Number</label>
           <input #reg="ngModel" pattern="\d\d\d\d\w\w\w\d\d\d" required
@@ -65,7 +65,7 @@
         </div>
         <!-- Submit Button -->
 
-
+      </div>
       </form>
       <!-- Form -->
     </div>
