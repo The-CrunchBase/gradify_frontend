@@ -6,6 +6,11 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+  position: fixed;
+}
+
+.remember {
+  color: #c5a68e;
 }
 
 .intro h1 {
@@ -13,16 +18,16 @@
   top: 30%;
   left: 50%;
   transform: translate(-50%);
-  text-align:justify;
+  text-align: justify;
   font-size: 70px;
   color: white;
 }
 
-.pacificofont{
+.pacificofont {
   font-family: pacifico;
   font-size: 50px;
 }
-.straightfont{
+.straightfont {
   font-size: 50px;
 }
 /* Add some content at the bottom of the video/page */
@@ -34,101 +39,206 @@
   height: 200%;
 }
 
- /* Form */
-input.ng-invalid{
-  border-left : 5px solid red
+/* Form */
+input.ng-invalid {
+  border-left: 5px solid red;
 }
-input.ng-valid{
-  border-left : 5px solid green
+input.ng-valid {
+  border-left: 5px solid green;
 }
 
-form input{
-  width:70%;
-  text-align:center;
+form input {
+  width: 70%;
+  text-align: center;
   margin-left: 10%;
 }
 
-#video-bg{
+#video-bg {
   z-index: -1;
 }
-#SEL{
-  width:70%;
-  text-align:center;
+#SEL {
+  width: 70%;
+  text-align: center;
   margin-left: 10%;
 }
 
-#btn{
+#btn {
   margin-left: 10%;
-
 }
-#leb{
+#leb {
   margin-left: 10%;
-
 }
 
-#load_msg{
+#load_msg {
   margin-left: 10%;
-  top:550px;
-  position:fixed;
+  top: 550px;
+  position: fixed;
 }
 @media screen and (max-width: 500px) {
-  form input{
-    width:50%;
-    text-align:center;
+  form input {
+    width: 50%;
+    text-align: center;
     margin-left: 25%;
   }
-  #SEL{
-    width:50%;
-    text-align:center;
+  #SEL {
+    width: 50%;
+    text-align: center;
     margin-left: 55%;
   }
-  #heading{
+  #heading {
     font-size: 10px;
   }
-  #btn{
-    margin-left: 25%;
-
-  }
-  #leb{
+  #btn {
     margin-left: 25%;
   }
-  #load_msg{
+  #leb {
+    margin-left: 25%;
+  }
+  #load_msg {
     margin-left: 47%;
-    top:500px;
+    top: 500px;
     /* position:fixed; */
   }
 }
 
-
 /* Model Popup */
 .fancy {
-  padding : 1em;
+  padding: 1em;
   width: 50%;
   height: 150px;
   box-sizing: border-box;
   position: relative;
   margin: 0 auto;
-  top:auto;
+  top: auto;
   /* At the bottom of our background stack,
      let's have a misty grey solid color */
-  background-color: #E4E4D9;
+  background-color: #e4e4d9;
 
   /* We stack linear gradients on top of each
      other to create our color strip effect.
      As you will notice, color gradients are
      considered to be images and can be
      manipulated as such */
-  background-image: linear-gradient(175deg, rgba(0,0,0,0) 95%, #8da389 95%),
-                    linear-gradient( 85deg, rgba(0,0,0,0) 95%, #8da389 95%),
-                    linear-gradient(175deg, rgba(0,0,0,0) 90%, #b4b07f 90%),
-                    linear-gradient( 85deg, rgba(0,0,0,0) 92%, #b4b07f 92%),
-                    linear-gradient(175deg, rgba(0,0,0,0) 85%, #c5a68e 85%),
-                    linear-gradient( 85deg, rgba(0,0,0,0) 89%, #c5a68e 89%),
-                    linear-gradient(175deg, rgba(0,0,0,0) 80%, #ba9499 80%),
-                    linear-gradient( 85deg, rgba(0,0,0,0) 86%, #ba9499 86%),
-                    linear-gradient(175deg, rgba(0,0,0,0) 75%, #9f8fa4 75%),
-                    linear-gradient( 85deg, rgba(0,0,0,0) 83%, #9f8fa4 83%),
-                    linear-gradient(175deg, rgba(0,0,0,0) 70%, #74a6ae 70%),
-                    linear-gradient( 85deg, rgba(0,0,0,0) 80%, #74a6ae 80%);
+  background-image: linear-gradient(175deg, rgba(0, 0, 0, 0) 95%, #8da389 95%),
+    linear-gradient(85deg, rgba(0, 0, 0, 0) 95%, #8da389 95%),
+    linear-gradient(175deg, rgba(0, 0, 0, 0) 90%, #b4b07f 90%),
+    linear-gradient(85deg, rgba(0, 0, 0, 0) 92%, #b4b07f 92%),
+    linear-gradient(175deg, rgba(0, 0, 0, 0) 85%, #c5a68e 85%),
+    linear-gradient(85deg, rgba(0, 0, 0, 0) 89%, #c5a68e 89%),
+    linear-gradient(175deg, rgba(0, 0, 0, 0) 80%, #ba9499 80%),
+    linear-gradient(85deg, rgba(0, 0, 0, 0) 86%, #ba9499 86%),
+    linear-gradient(175deg, rgba(0, 0, 0, 0) 75%, #9f8fa4 75%),
+    linear-gradient(85deg, rgba(0, 0, 0, 0) 83%, #9f8fa4 83%),
+    linear-gradient(175deg, rgba(0, 0, 0, 0) 70%, #74a6ae 70%),
+    linear-gradient(85deg, rgba(0, 0, 0, 0) 80%, #74a6ae 80%);
 }
 /* Model Popup */
+
+/* button view result*/
+/* loading */
+/* body{
+  padding:0;
+  margin:0;
+  width:100%;
+  height:100vh;
+  background:radial-gradient(#9b59b6, #8e44ad);
+} */
+.wrapper{
+  width:200px;
+  height:60px;
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+}
+.circle{
+  width:20px;
+  height:20px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: #fff;
+  left:15%;
+  transform-origin: 50%;
+  animation: circle .5s alternate infinite ease;
+}
+
+@keyframes circle{
+  0%{
+      top:60px;
+      height:5px;
+      border-radius: 50px 50px 25px 25px;
+      transform: scaleX(1.7);
+  }
+  40%{
+      height:20px;
+      border-radius: 50%;
+      transform: scaleX(1);
+  }
+  100%{
+      top:0%;
+  }
+}
+.circle:nth-child(2){
+  left:45%;
+  animation-delay: .2s;
+}
+.circle:nth-child(3){
+  left:auto;
+  right:15%;
+  animation-delay: .3s;
+}
+.shadow{
+  width:20px;
+  height:4px;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,.5);
+  position: absolute;
+  top:62px;
+  transform-origin: 50%;
+  z-index: -1;
+  left:15%;
+  filter: blur(1px);
+  animation: shadow .5s alternate infinite ease;
+}
+
+@keyframes shadow{
+  0%{
+      transform: scaleX(1.5);
+  }
+  40%{
+      transform: scaleX(1);
+      opacity: .7;
+  }
+  100%{
+      transform: scaleX(.2);
+      opacity: .4;
+  }
+}
+.shadow:nth-child(4){
+  left: 45%;
+  animation-delay: .2s
+}
+.shadow:nth-child(5){
+  left:auto;
+  right:15%;
+  animation-delay: .3s;
+}
+.wrapper span{
+  position: absolute;
+  top:75px;
+  font-family: 'Lato';
+  font-size: 20px;
+  letter-spacing: 12px;
+  color: #fff;
+  left:15%;
+}
+
+@keyframes youtubeAnim{
+0%,100%{
+  color:#c9110f;
+}
+50%{
+  color:#ff0000;
+}
+}
+/* footer  */
