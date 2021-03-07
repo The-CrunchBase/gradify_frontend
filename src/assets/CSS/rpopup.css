@@ -1,6 +1,6 @@
 
 .btn.btn-primary{
-    background: yellow;
+    background: pink;
     border: none;
 }
 
@@ -9,7 +9,7 @@
     box-shadow: inset;
 }
 
-body.modal-open .intro {
+body.modal-open .inner {
     filter: blur(5px);
     -webkit-filter: blur(5px);
 }
