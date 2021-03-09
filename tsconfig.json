@@ -19,7 +19,17 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    // For error in variable declaration
+    "noImplicitAny": false,
+    // For error in variable declaration
+
+    // for error in json import
+    "resolveJsonModule":true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    // for error in json import
+
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

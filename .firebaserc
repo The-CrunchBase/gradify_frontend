@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "gradify-crunchbase": {
+      "hosting": {
+        "gradify-frontend": [
+          "gradify-crunchbase"
+        ]
+      }
+    }
+  }
+}
