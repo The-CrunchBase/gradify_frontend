@@ -9,19 +9,22 @@ import sems from 'src/assets/json/sem.json';
 })
 export class HomePageComponent implements OnInit {
 
-  // https://crunchbase-gradify.herokuapp.com/
+  hosted_url = "https://crunchbase-gradify.herokuapp.com"
+  // local_url = "http://localhost:8000"
   sgpa;
   msg;
   pdf_link;
   pdf;
-  pdf_url = "https://crunchbase-gradify.herokuapp.com";
+  mail;
+  // pdf_url = "https://crunchbase-gradify.herokuapp.com";
   registration_number;
   semester;
   sgpa_loading = false;
   pdf_loading = false;
   generating_pdf = false;
+  sending_mail = false;
   show_form = true; 
-  generatePdf_link = "https://crunchbase-gradify.herokuapp.com/pdf/"
+  // generatePdf_link = "https://crunchbase-gradify.herokuapp.com/pdf/"
   user_result;
   pdf_load_msg;
   public semList:{sem:string, year:string}[] = sems;
@@ -29,12 +32,10 @@ export class HomePageComponent implements OnInit {
   constructor(private http:HttpClient) { }
 
   onSubmit(data){
+    this.mail = false
     this.sgpa_loading = true
-    this.registration_number = data.value.reg
-    this.semester = data.value.sem
     console.log("sgpa generating....")
-    var url = "https://crunchbase-gradify.herokuapp.com/result/"+this.registration_number+"/"+this.semester+"/"
-    return this.http.get(url).subscribe((result)=>{
+    return this.http.post(this.hosted_url+"/result/",data.value).subscribe((result)=>{
       console.log("sgpa genereted....")
       this.sgpa = result
       this.msg = this.sgpa.msg
@@ -58,28 +59,47 @@ export class HomePageComponent implements OnInit {
   }
 
   savePdf(){
+      this.mail = false
       this.pdf_loading = true;
-      this.pdf_load_msg = "**Please wait your pdf is generating"
       console.log("pdf generating....")
-      return this.http.post(this.generatePdf_link,this.user_result).subscribe((result)=>{
+      return this.http.post(this.hosted_url+"/pdf/",this.user_result).subscribe((result)=>{
           console.log("pdf genereted....")
           this.pdf_link = result
-          this.pdf_link = this.pdf_link.data['pdf_file']
-          this.pdf = this.pdf_url+this.pdf_link
+          this.pdf_link = this.pdf_link.data['pdf']
+          this.pdf = this.hosted_url+this.pdf_link
           this.generating_pdf = true;
           this.pdf_loading = false;
           if (this.generating_pdf == true)  location.assign(this.pdf)
-         setTimeout(this.closeLoading,1000)
         })
   }
 
+  sendMail(){
+    this.mail = false
+    this.sending_mail = true;
+    console.log("sending mail...")
+    return this.http.post(this.hosted_url+"/pdf/?mail=true",this.user_result).subscribe((result)=>{
+        this.mail = result
+        this.msg = this.mail.msg
+        console.log(this.mail.msg)
+        // console.log(this.sgpa.data)
+        if(this.msg == "Mail Sent Succesfully")  {
+          this.mail = true
+        }
+        if(this.msg == "Sorry!Mail not Sent...")  {
+          this.mail = false
+        }
+      })
+}
+
   
   closeLoading(){
+    this.mail = false
     this.pdf_loading = false;
     console.log(this.pdf_loading)
   }
 
   onClose(){
+    this.mail = false
     this.show_form=true;
   }
 

@@ -1,85 +1,133 @@
 <!-- Head -->
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
-      rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+    rel="stylesheet">
+  <meta charset="UTF-8">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+    fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0
+      1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13
+      2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728
+      8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1
+      11.114l4.758-2.876L1 5.383v5.73z" />
+    </svg>
   </head>
   <!-- Head -->
-  
-  
+
+
   <!-- Body -->
   <body>
     <div class="intro">
-  
+
       <!-- Title -->
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <h1>
         <span id="gradify_title" class="pacificofont">gradify&nbsp;</span>
-        <span id="gradify_title" class="straightfont">| CrunchBase</span>
+        <span id="gradify_title" class="straightfont">| devMonks </span>
       </h1>
+      <!-- <p>I will display &#65; &#66; &#67;</p>  -->
+
       <!-- Title -->
-  
+
       <!-- Background Video -->
       <video onended="run()" autoplay id="video-bg" oncanplay="this.play()"
         onloadedmetadata="this.muted= true">
         <source src="assets/videos/Solar.mp4" type="video/mp4">
       </video>
       <!-- Background Video -->
-  
+
       <!-- Form -->
       <div class="content">
         <div class="container">
           <br>
           <form #gradeForm="ngForm" (ngSubmit)="onSubmit(gradeForm)">
-  
+
             <!-- Popup Form -->
             <div *ngIf="show_form===false">
               <div id="model_popup" class="fancy">
-                <p style="text-align:center;font-size: 22px"><b>Congratulations...</b>
+                <p style="text-align:center;font-size: 22px"><b>&nbsp;Congratulations...</b>
                   <a (click)="onClose()" class="close">&times;</a></p>
                 <hr>
-                <p id="sgpa" style="text-align:center;font-size: 22px;"><b>{{sgpa}}</b></p><br><hr>
-  
-                <!-- Initial View full result button -->
-                <div *ngIf="pdf_loading;then content else other_content">here is
-                  ignored</div>
-                <ng-template #other_content>
-                  <button id="view_button" (click)="savePdf()" type="button" class="btn
-                    btn-outline-primary">View Full Result</button>
-                </ng-template>
-                <!-- Initial View full result button -->
-  
-                <!-- After clicking loading button -->
-                <ng-template #content>
-                  <div class="d-flex justify-content-center">
-                    <div class="spinner-border text-success" role="status">
-                      <span class="sr-only">Loading...</span>
+                <!-- if Result Calculated Successfully -->
+                <div *ngIf="msg==='SGPA is calculated successfully' || mail===true">
+                  <p id="sgpa" style="text-align:center;font-size:
+                    22px;color:green;"><b>{{sgpa}}</b></p><br><hr>
+
+                  <!-- Initial View full result button -->
+                  <div *ngIf="pdf_loading;then content else other_content">here
+                    is
+                    ignored</div>
+                  <ng-template #other_content>
+                    <button id="view_button" (click)="savePdf()" type="button"
+                      class="btn
+                      btn-outline-primary">View Full Result</button>
+                    <a id="send_mail" (click)="sendMail()"><i class="bi
+                        bi-envelope"></i></a>
+                  </ng-template>
+                  <!-- Initial View full result button -->
+
+                  <!-- After clicking loading button -->
+                  <ng-template #content>
+                    <div class="d-flex justify-content-center">
+                      <div class="spinner-border text-success" role="status">
+                        <span class="sr-only">Loading...</span>
+                      </div>
                     </div>
-                  </div>
-                </ng-template>
-                <!-- <p style="color:green;text-align:center;">{{pdf_load_msg}}</p> -->
-                <!-- After clicking loading button -->
-  
+                  </ng-template>
+                  <!-- <p style="color:green;text-align:center;">{{pdf_load_msg}}</p> -->
+                  <!-- After clicking loading button -->
+                </div>
+
+                <!-- if Registration Number is Wrong -->
+                <div *ngIf="msg==='Please enter valid Registration Number'">
+                  <p id="sgpa" style="text-align:center;font-size:
+                    22px;color:red;"><b>{{sgpa}}</b></p><br><hr>
+                </div>
+
+                <!-- if Result Not Found -->
+                <div *ngIf="msg==='Result Not Found'">
+                  <p id="sgpa" style="text-align:center;font-size:
+                    22px;color:red;"><b>{{sgpa}}</b></p><br><hr>
+                </div>
+
+
+
+
+
+              </div>
+            </div>
+
+            <div *ngIf="mail">
+              <div class="swal2-icon swal2-success swal2-animate-success-icon"
+                style="display: flex;">
+                <span class="swal2-success-line-tip"></span>
+                <span class="swal2-success-line-long"></span>
+                <div class="swal2-success-ring"></div>
               </div>
             </div>
             <!-- Popup Form -->
-  
+
             <br>
             <!-- Registration Number Input -->
             <div *ngIf="show_form===true">
               <div class="form-group">
-                <label id="input_label" style="color:aqua" for="reg">Registration Number</label>
+                <label id="input_label" style="color:aqua" for="reg">Registration
+                  Number</label>
                 <input #reg="ngModel" pattern="\d\d\d\d\w\w\w\d\d\d" required
                   type="text" class="form-control"
-                  id="reg" onblur="uppercase()" autocomplete="off" aria-describedby="reg" placeholder="Enter Your Registration Number" ngModel name="reg">
+                  id="reg" onblur="uppercase()" autocomplete="off"
+                  aria-describedby="reg" placeholder="Enter Your Registration
+                  Number" ngModel name="reg">
                 <span id="input_label" *ngIf="reg.invalid && reg.touched"
                   style="color:red"><b>**Please
                     Enter Your Correct Registration Number</b></span>
               </div>
               <!-- Registration Number Input -->
-  
+
               <!-- Select Semester -->
-              <label id="input_label" style="color:aqua" for="sem">Select Semester</label>
+              <label id="input_label" style="color:aqua" for="sem">Select
+                Semester</label>
               <div id="select_semester" class="select" class="input-group mb-3">
                 <div class="input-group-prepend">
                   <label class="input-group-text" for="inputGroupSelect01">SEMESTER</label>
@@ -91,39 +139,40 @@
                 </select>
               </div>
               <!-- Select Semester -->
-  
+
               <!-- Submit Button -->
               <div *ngIf="sgpa_loading;then content else other_content">here is
                 ignored</div>
-  
+
               <!-- Initial Calculate button -->
               <ng-template #other_content>
-                  <button id="submit_button" type="submit" [disabled]="gradeForm.invalid" class="btn btn-outline-info">Calculate</button>
+                <button id="submit_button" type="submit"
+                  [disabled]="gradeForm.invalid" class="btn btn-outline-info">Calculate</button>
               </ng-template>
               <!-- Initial Calculate button -->
-  
+
               <!-- After clicking loading button -->
               <ng-template #content>
-                <button id="submit_button" class="btn btn-info" type="button" disabled>
+                <button id="submit_button" class="btn btn-info" type="button"
+                  disabled>
                   <span class="spinner-border spinner-border-sm" role="status"
                     aria-hidden="true"></span>
                   Loading...
                 </button>
               </ng-template>
               <!-- After clicking loading button -->
-  
+
               <!-- Submit Button -->
-  
+
             </div>
           </form>
-          
+
         </div>
       </div>
       <!-- Form -->
-      
+
     </div>
   </body>
   <!-- Body -->
-  
+
   <router-outlet></router-outlet>
-  
