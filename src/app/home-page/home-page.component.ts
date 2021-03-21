@@ -74,8 +74,9 @@ export class HomePageComponent implements OnInit {
   }
 
   sendMail(){
-    this.mail = false
     this.sending_mail = true;
+    this.pdf_loading = true
+    this.mail = false
     console.log("sending mail...")
     return this.http.post(this.hosted_url+"/pdf/?mail=true",this.user_result).subscribe((result)=>{
         this.mail = result
@@ -83,9 +84,13 @@ export class HomePageComponent implements OnInit {
         console.log(this.mail.msg)
         // console.log(this.sgpa.data)
         if(this.msg == "Mail Sent Succesfully")  {
+          this.pdf_loading = false
+          this.sending_mail = false;
           this.mail = true
         }
         if(this.msg == "Sorry!Mail not Sent...")  {
+          this.pdf_loading = false
+          this.sending_mail = false;
           this.mail = false
         }
       })

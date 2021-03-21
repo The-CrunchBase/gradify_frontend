@@ -50,9 +50,15 @@
                   <a (click)="onClose()" class="close">&times;</a></p>
                 <hr>
                 <!-- if Result Calculated Successfully -->
-                <div *ngIf="msg==='SGPA is calculated successfully' || mail===true">
+                <div *ngIf="msg==='SGPA is calculated successfully' ||
+                  mail===true || pdf_loading===true">
                   <p id="sgpa" style="text-align:center;font-size:
                     22px;color:green;"><b>{{sgpa}}</b></p><br><hr>
+
+                  <!-- sending mail message -->
+                  <div *ngIf="sending_mail">
+                    <p style="color:green;margin-left:38%;font-size:18px;"><b>Sending Mail...</b></p>
+                  </div>
 
                   <!-- Initial View full result button -->
                   <div *ngIf="pdf_loading;then content else other_content">here
@@ -63,7 +69,7 @@
                       class="btn
                       btn-outline-primary">View Full Result</button>
                     <a id="send_mail" (click)="sendMail()"><i class="bi
-                        bi-envelope"></i></a>
+                        bi-envelope" title="Receive Gradecard on Mail"></i></a>
                   </ng-template>
                   <!-- Initial View full result button -->
 
@@ -117,8 +123,7 @@
                 <input #reg="ngModel" pattern="\d\d\d\d\w\w\w\d\d\d" required
                   type="text" class="form-control"
                   id="reg" onblur="uppercase()" autocomplete="off"
-                  aria-describedby="reg" placeholder="Enter Your Registration
-                  Number" ngModel name="reg">
+                  aria-describedby="reg" placeholder="Enter Your Registration Number" ngModel name="reg">
                 <span id="input_label" *ngIf="reg.invalid && reg.touched"
                   style="color:red"><b>**Please
                     Enter Your Correct Registration Number</b></span>
