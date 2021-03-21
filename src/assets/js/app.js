@@ -9,3 +9,4 @@ function uppercase() {
   var x = document.getElementById("reg");
   x.value = x.value.toUpperCase();
 }
+

@@ -18,6 +18,44 @@
 
   <!-- Body -->
   <body>
+    <div *ngIf="show_form===false && msg==='SGPA is calculated successfully'">
+              
+      <!-- Confetti -->
+      <div id="confettis">
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+      </div>
+      <!-- Confetti -->
+    </div>
+
     <div class="intro">
 
       <!-- Title -->
@@ -45,19 +83,20 @@
 
             <!-- Popup Form -->
             <div *ngIf="show_form===false">
+
               <div id="model_popup" class="fancy">
                 <p style="text-align:center;font-size: 22px"><b>&nbsp;Congratulations...</b>
                   <a (click)="onClose()" class="close">&times;</a></p>
                 <hr>
                 <!-- if Result Calculated Successfully -->
                 <div *ngIf="msg==='SGPA is calculated successfully' ||
-                  mail===true || pdf_loading===true">
+                  mail===true">
                   <p id="sgpa" style="text-align:center;font-size:
-                    22px;color:green;"><b>{{sgpa}}</b></p><br><hr>
+                    22px;"><b>{{sgpa}}</b></p><br><hr>
 
                   <!-- sending mail message -->
                   <div *ngIf="sending_mail">
-                    <p style="color:green;margin-left:38%;font-size:18px;"><b>Sending Mail...</b></p>
+                    <p style="color:green;margin-left:22%;font-size:18px;"><b>Sending GradeCard to your Mail...</b></p>
                   </div>
 
                   <!-- Initial View full result button -->
@@ -96,9 +135,6 @@
                   <p id="sgpa" style="text-align:center;font-size:
                     22px;color:red;"><b>{{sgpa}}</b></p><br><hr>
                 </div>
-
-
-
 
 
               </div>
@@ -162,7 +198,7 @@
                   disabled>
                   <span class="spinner-border spinner-border-sm" role="status"
                     aria-hidden="true"></span>
-                  Loading...
+                  Calculating...
                 </button>
               </ng-template>
               <!-- After clicking loading button -->

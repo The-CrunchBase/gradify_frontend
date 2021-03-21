@@ -16,7 +16,7 @@ export class HomePageComponent implements OnInit {
   pdf_link;
   pdf;
   mail;
-  // pdf_url = "https://crunchbase-gradify.herokuapp.com";
+  mail_msg;
   registration_number;
   semester;
   sgpa_loading = false;
@@ -24,7 +24,6 @@ export class HomePageComponent implements OnInit {
   generating_pdf = false;
   sending_mail = false;
   show_form = true; 
-  // generatePdf_link = "https://crunchbase-gradify.herokuapp.com/pdf/"
   user_result;
   pdf_load_msg;
   public semList:{sem:string, year:string}[] = sems;
@@ -39,9 +38,7 @@ export class HomePageComponent implements OnInit {
       console.log("sgpa genereted....")
       this.sgpa = result
       this.msg = this.sgpa.msg
-      console.log(this.sgpa.msg)
       this.user_result = this.sgpa.data;
-      // console.log(this.sgpa.data)
       if(this.msg == "Please enter valid Registration Number")  {
         this.sgpa = "**Please enter valid working registration number"
       }
@@ -51,7 +48,6 @@ export class HomePageComponent implements OnInit {
       if(this.msg == "SGPA is calculated successfully") {
         this.sgpa = "Your SGPA is "+this.sgpa.data['sgpa']
       }
-      // this.sgpa = this.sgpa.data['sgpa']
       this.sgpa_loading = false
       this.show_form=false;
     
@@ -80,22 +76,20 @@ export class HomePageComponent implements OnInit {
     console.log("sending mail...")
     return this.http.post(this.hosted_url+"/pdf/?mail=true",this.user_result).subscribe((result)=>{
         this.mail = result
-        this.msg = this.mail.msg
-        console.log(this.mail.msg)
-        // console.log(this.sgpa.data)
-        if(this.msg == "Mail Sent Succesfully")  {
+        this.mail_msg = this.mail.msg
+        console.log(this.mail.mail_msg)
+        if(this.mail_msg == "Mail Sent Succesfully")  {
           this.pdf_loading = false
           this.sending_mail = false;
           this.mail = true
         }
-        if(this.msg == "Sorry!Mail not Sent...")  {
+        if(this.mail_msg == "Sorry!Mail not Sent...")  {
           this.pdf_loading = false
           this.sending_mail = false;
           this.mail = false
         }
       })
 }
-
   
   closeLoading(){
     this.mail = false
