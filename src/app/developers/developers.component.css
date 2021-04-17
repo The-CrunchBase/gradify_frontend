@@ -1,0 +1,147 @@
+body {
+    font-family: Roboto, sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    grid-gap: 30px 50px;
+    align-items: center;
+    justify-items: center;
+    background-image: linear-gradient(to top, rgb(11, 21, 53) 0%, rgb(83, 223, 199) 100%);
+  }
+  .card1 {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 14px 80px rgba(27, 30, 77, 0.5);
+    max-width: 400px;
+    display: flex;
+    flex-direction: row;
+
+    position: relative;
+    padding: 1rem;
+    margin-bottom: 50px;
+  }
+  .card2 {
+    background: #fff;
+    
+    box-shadow: 0px 14px 80px rgba(27, 30, 77, 0.5);
+    max-width: 400px;
+    display: flex;
+    padding-top: 40px;
+    flex-direction: row;
+    border-radius: 20px;
+    position: relative;
+    padding: 1rem;
+    margin-top:30px;
+  }
+  .card1 h2 {
+    margin: 0;
+    padding: 0 1rem;
+  }
+  .card1 .title {
+    padding: 1rem;
+    text-align: right;
+    color: black;
+    font-weight: bold;
+    font-size: 12px;
+  }
+  .card2 h2 {
+    margin: 0;
+    padding: 0 1rem;
+  }
+  .card2 .title {
+    padding: 1rem;
+    text-align: right;
+    color: black;
+    font-weight: bold;
+    font-size: 12px;
+  }
+  .card1 .desc {
+    padding: 0.5rem 1rem;
+    font-size: 12px;
+  }
+  .card1 .actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    padding: 0.5rem 1rem;
+  }
+  .card2 .desc {
+    padding: 0.5rem 1rem;
+    font-size: 12px;
+  }
+  .card2 .actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    padding: 0.5rem 1rem;
+  }
+  .card1 svg {
+    width: 85px;
+    height: 85px;
+    margin: 0 auto;
+  }
+  .card2 svg {
+    width: 85px;
+    height: 85px;
+    margin: 0 auto;
+  }
+  
+  .img-avatar {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    border-radius: 50%;
+    border: 6px solid white;
+    background-image: linear-gradient(-60deg, #16a085 0%, rgb(131, 39, 235) 100%);
+    top: 15px;
+    left: 85px;
+  }
+  
+  .card-text {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+  
+  .title-total {
+    padding: 2.5em 1.5em 1.5em 1.5em;
+  }
+  
+  path {
+    fill: white;
+  }
+  
+  .img-portada {
+    width: 100%;
+  }
+  
+  .portada1 {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-image: url('src/assets/images/vikasprofile.jpg');
+    background-position: bottom center;
+
+    background-size: cover;
+  }
+  .portada2 {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-image: url('src/assets/images/dhirajprofile.jpg');
+    background-position: bottom center;
+
+    background-size: cover;
+  }
+  
+  button {
+    border: none;
+    background: none;
+    font-size: 24px;
+    color: #8bc34a;
+    cursor: pointer;
+    transition:.5s;
+
+  }
+  

@@ -26,7 +26,7 @@ export class HomePageComponent implements OnInit {
   show_form = true; 
   user_result;
   pdf_load_msg;
-  public semList:{sem:string, year:string}[] = sems;
+  public semList:{sem:string, year:string, value:string}[] = sems;
 
   constructor(private http:HttpClient) { }
 

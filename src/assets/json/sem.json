@@ -1,34 +1,42 @@
 [
   {
     "sem": "SEM1",
-    "year": "First Year"
+    "year": "First Year",
+    "value": "1"
   },
   {
     "sem": "SEM2",
-    "year": "First Year"
+    "year": "First Year",
+    "value": "2"
   },
   {
     "sem": "SEM3",
-    "year": "Second Year"
+    "year": "Second Year",
+    "value": "3"
   },
   {
     "sem": "SEM4",
-    "year": "Second Year"
+    "year": "Second Year",
+    "value": "4"
   },
   {
     "sem": "SEM5",
-    "year": "Third Year"
+    "year": "Third Year",
+    "value": "5"
   },
   {
     "sem": "SEM6",
-    "year": "Third Year"
+    "year": "Third Year",
+    "value": "6"
   },
   {
     "sem": "SEM7",
-    "year": "Final Year"
+    "year": "Final Year",
+    "value": "7"
   },
   {
     "sem": "SEM8",
-    "year": "Final Year"
+    "year": "Final Year",
+    "value": "8"
   }
 ]

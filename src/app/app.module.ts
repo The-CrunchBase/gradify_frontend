@@ -8,13 +8,17 @@ import { HomePageComponent } from './home-page/home-page.component';
 // My Modules
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CalculateCGPAComponent } from './calculate-cgpa/calculate-cgpa.component';
+import { DevelopersComponent } from './developers/developers.component';
 // My Modules
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent
+    HomePageComponent,
+    CalculateCGPAComponent,
+    DevelopersComponent
   ],
   imports: [
     BrowserModule,

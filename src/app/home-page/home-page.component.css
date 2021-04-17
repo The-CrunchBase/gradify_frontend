@@ -1,5 +1,8 @@
 body {
-  background-color: black;
+  background-image: url('src/assets/images/background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 .intro {
   height: 100vh;

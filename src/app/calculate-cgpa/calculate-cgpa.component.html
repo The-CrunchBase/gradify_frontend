@@ -1,0 +1,212 @@
+<!-- Head -->
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+        rel="stylesheet">
+    <meta charset="UTF-8">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+        fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0
+            1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13
+            2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583
+            6.728
+            8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1
+            11.114l4.758-2.876L1 5.383v5.73z" />
+        </svg>
+    </head>
+    <!-- Head -->
+
+
+    <!-- Body -->
+    <body>
+        <div *ngIf="show_form===false">
+
+            <!-- Confetti -->
+            <div id="confettis">
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+            </div>
+            <!-- Confetti -->
+        </div>
+
+        <div class="intro">
+
+            <!-- Title -->
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <h1>
+                <span id="gradify_title" class="pacificofont">gradify&nbsp;</span>
+                <span id="gradify_title" class="straightfont">| devMonks </span>
+            </h1>
+
+            <!-- Form -->
+            <div class="content">
+                <div class="container">
+                    <br>
+                    <form #cgpaForm="ngForm" (ngSubmit)="onSubmit(cgpaForm)">
+                        <!-- Popup Form -->
+                        <div *ngIf="show_popupform===true">
+
+                            <div id="model_popup" class="fancy">
+                                <p style="text-align:center;font-size: 22px"><b>&nbsp;Congratulations...</b>
+                                    <a (click)="onClose()" class="close">&times;</a></p>
+                                <hr>
+                                <!-- if Result Calculated Successfully -->
+                                <div>
+                                    <p id="sgpa"
+                                        style="text-align:center;font-size:
+                                        22px;"><b>{{cgpa}}</b></p><br><hr>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Popup Form -->
+
+                        <!-- Show Inputs -->
+                        <div *ngIf="show_inputs===true">
+                            <form #inputForm="ngForm"
+                                (ngSubmit)="onSubmit(inputForm)">
+                                <!-- SGPA Number Input -->
+                                <div *ngFor="let sem of semester">
+                                    {{sem}}
+                                    <div class="form-group">
+                                        <label id="input_label"
+                                            style="color:aqua" for="reg"></label>
+                                        <input #reg="ngModel"
+                                            required
+                                            type="text" class="form-control"
+                                            id="reg"
+                                            autocomplete="off"
+                                            aria-describedby="reg"
+                                            placeholder="Enter Your SGPA"
+                                            ngModel name="reg">
+                                        <span id="input_label"
+                                            *ngIf="reg.invalid && reg.touched"
+                                            style="color:red"><b>**Please
+                                                Enter Your Correct Registration
+                                                Number</b></span>
+                                    </div>
+                                </div>
+                                <!-- SGPA Number Input -->
+                                <!-- Submit Button -->
+                                <div *ngIf="sgpa_loading;then content else
+                                    other_content">here is
+                                    ignored</div>
+
+                                <!-- Initial Calculate button -->
+                                <ng-template #other_content>
+                                    <button id="submit_button" type="submit"
+                                        [disabled]="inputForm.invalid"
+                                        class="btn btn-outline-info">Calculate</button>
+                                </ng-template>
+                                <!-- Initial Calculate button -->
+
+                                <!-- After clicking loading button -->
+                                <ng-template #content>
+                                    <button id="submit_button" class="btn
+                                        btn-info" type="button"
+                                        disabled>
+                                        <span class="spinner-border
+                                            spinner-border-sm" role="status"
+                                            aria-hidden="true"></span>
+                                        Calculating...
+                                    </button>
+                                </ng-template>
+                                <!-- After clicking loading button -->
+
+                                <!-- Submit Button -->
+                            </form>
+                        </div>
+
+                        <!-- Show Inputs -->
+
+
+                        <br>
+                        <div *ngIf="show_form===true">
+
+                            <!-- Select Semester -->
+                            <label id="input_label" style="color:aqua"
+                                for="sem">Select your passed semester
+                            </label>
+                            <div id="select_semester" class="select"
+                                class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text"
+                                        for="inputGroupSelect01">SEMESTER</label>
+                                </div>
+                                <select required name="sem" ngModel
+                                    class="custom-select"
+                                    id="inputGroupSelect01">
+                                    <option *ngFor="let sem of semList"
+                                        value="{{ sem.value }}">{{
+                                        sem.sem }}</option>
+                                </select>
+                            </div>
+                            <!-- Select Semester -->
+
+                            <!-- Submit Button -->
+                            <div *ngIf="sgpa_loading;then content else
+                                other_content">here is
+                                ignored</div>
+
+                            <!-- Initial Calculate button -->
+                            <ng-template #other_content>
+                                <button id="submit_button" type="submit"
+                                    [disabled]="cgpaForm.invalid"
+                                    class="btn btn-outline-info">Submit</button>
+                            </ng-template>
+                            <!-- Initial Calculate button -->
+
+                            <!-- After clicking loading button -->
+                            <ng-template #content>
+                                <button id="submit_button" class="btn
+                                    btn-info" type="button"
+                                    disabled>
+                                    <span class="spinner-border
+                                        spinner-border-sm" role="status"
+                                        aria-hidden="true"></span>
+                                    Submiting...
+                                </button>
+                            </ng-template>
+                            <!-- After clicking loading button -->
+
+                            <!-- Submit Button -->
+
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            <!-- Form -->
+
+        </div>
+    </body>
+    <!-- Body -->
+
+    <router-outlet></router-outlet>
