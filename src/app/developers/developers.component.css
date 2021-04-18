@@ -9,12 +9,26 @@ body {
     background-image: linear-gradient(to top, rgb(11, 21, 53) 0%, rgb(83, 223, 199) 100%);
   }
 
-  #gradify_title {
+  .intro {
+    height: 100vh;
+  }
+
+  .intro h1 {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: justify;
+    font-size: 70px;
+    color: white;
+  }
+
+  /* #gradify_title {
     position: absolute;
     top: 30px;
     color: white;
     margin-left: 350px;
-  }
+  } */
 
   .pacificofont {
     font-family: pacifico;
@@ -23,6 +37,17 @@ body {
   .straightfont {
     font-size: 50px;
   } 
+
+  @media screen and (max-width: 500px) {
+    /* #gradify_title {
+      position: absolute;
+      top: 120px;
+      color: white;
+      margin-left: 150px;
+      font-size: 35px;
+    } */
+  }
+  
 
   .card1 {
     background: #fff;
@@ -161,13 +186,4 @@ body {
 
   }
 
-  @media screen and (max-width: 500px) {
-    #gradify_title {
-      position: absolute;
-      top: 120px;
-      color: white;
-      margin-left: 150px;
-      font-size: 35px;
-    }
-  }
-  
+ 

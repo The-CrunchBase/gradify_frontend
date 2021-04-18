@@ -19,7 +19,6 @@
   <!-- Body -->
   <body>
     <div *ngIf="show_form===false && msg==='SGPA is calculated successfully'">
-              
       <!-- Confetti -->
       <div id="confettis">
         <div class="confetti"></div>
@@ -61,8 +60,8 @@
       <!-- Title -->
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <h1>
-        <span id="gradify_title" class="pacificofont">gradify&nbsp;</span>
-        <span id="gradify_title" class="straightfont">| devMonks </span>
+        <span style="text-align: center;" id="gradify_title" class="pacificofont">gradify&nbsp;</span>
+        <span style="text-align: center;" id="gradify_title" class="straightfont">| devMonks </span>
       </h1>
       <!-- <p>I will display &#65; &#66; &#67;</p>  -->
 
@@ -88,6 +87,7 @@
                 <p style="text-align:center;font-size: 22px"><b>&nbsp;Congratulations...</b>
                   <a (click)="onClose()" class="close">&times;</a></p>
                 <hr>
+
                 <!-- if Result Calculated Successfully -->
                 <div *ngIf="msg==='SGPA is calculated successfully' ||
                   mail===true">
@@ -96,7 +96,8 @@
 
                   <!-- sending mail message -->
                   <div *ngIf="sending_mail">
-                    <p style="color:green;margin-left:22%;font-size:18px;"><b>Sending GradeCard to your Mail...</b></p>
+                    <p style="color:green;margin-left:22%;font-size:18px;"><b>Sending
+                        GradeCard to your Mail...</b></p>
                   </div>
 
                   <!-- Initial View full result button -->
@@ -104,15 +105,22 @@
                     is
                     ignored</div>
                   <ng-template #other_content>
-                    <button id="view_button" (click)="savePdf()" type="button"
+                    <button style="float: right;" id="view_button"
+                      (click)="savePdf()" type="button"
                       class="btn
                       btn-outline-primary">View Full Result</button>
-                    <a id="send_mail" (click)="sendMail()"><i class="bi
+
+                    <!-- Send Mail Button -->
+                    <a style="float: left;font-size:
+                      22px;color:blue;position:relative;top:20px;"
+                      id="send_mail" (click)="sendMail()"><i class="bi
                         bi-envelope" title="Receive Gradecard on Mail"></i></a>
+                    <!-- Send Mail Button -->
+
                   </ng-template>
                   <!-- Initial View full result button -->
 
-                  <!-- After clicking loading button -->
+                  <!-- After clicking View Full Result oading button -->
                   <ng-template #content>
                     <div class="d-flex justify-content-center">
                       <div class="spinner-border text-success" role="status">
@@ -120,8 +128,8 @@
                       </div>
                     </div>
                   </ng-template>
-                  <!-- <p style="color:green;text-align:center;">{{pdf_load_msg}}</p> -->
-                  <!-- After clicking loading button -->
+                  <!-- After clicking View Full Result oading button -->
+
                 </div>
 
                 <!-- if Registration Number is Wrong -->
@@ -129,25 +137,34 @@
                   <p id="sgpa" style="text-align:center;font-size:
                     22px;color:red;"><b>{{sgpa}}</b></p><br><hr>
                 </div>
+                <!-- if Registration Number is Wrong -->
+
 
                 <!-- if Result Not Found -->
                 <div *ngIf="msg==='Result Not Found'">
                   <p id="sgpa" style="text-align:center;font-size:
                     22px;color:red;"><b>{{sgpa}}</b></p><br><hr>
                 </div>
+                <!-- if Result Not Found -->
+
+
+                <!-- Mail Checkmark -->
+                <div style="position:relative;bottom:10px;margin-left:80px;" *ngIf="mail">
+                  <div class="swal2-icon swal2-success
+                    swal2-animate-success-icon"
+                    style="display: flex;">
+                    <span class="swal2-success-line-tip"></span>
+                    <span class="swal2-success-line-long"></span>
+                    <div class="swal2-success-ring"></div>
+                  </div>
+                </div>
+                <!-- Mail Checkmark -->
 
 
               </div>
             </div>
 
-            <div *ngIf="mail">
-              <div class="swal2-icon swal2-success swal2-animate-success-icon"
-                style="display: flex;">
-                <span class="swal2-success-line-tip"></span>
-                <span class="swal2-success-line-long"></span>
-                <div class="swal2-success-ring"></div>
-              </div>
-            </div>
+
             <!-- Popup Form -->
 
             <br>

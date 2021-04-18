@@ -23,25 +23,26 @@ footer {
   #counter {
       position:relative;
       top:-32px;
-      margin-left: 1000px;
+      float:right;
   }
   /* Counter */
   
   #send_mail{
       position:relative;
       top:28px;
-      margin-right:1000px;
+      float:left;
+      /* margin-right:1000px; */
   }
   
   
   
   @media screen and (max-width: 500px) {
     /* Counter */
-    #counter {
+    /* #counter {
       position:relative;
       bottom:40px;
       margin-left: 400px;
-    }
+    } */
     /* Counter */
   }
   

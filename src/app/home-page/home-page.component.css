@@ -76,20 +76,63 @@ form input {
   position: fixed;
 }
 
-#view_button {
+/* #view_button {
   margin-left: 350px;
-}
+} */
 
-#send_mail {
+/* #send_mail {
   position: relative;
   bottom: 20px;
   margin-right: 270px;
   color: blue;
+} */
+
+/* Responcive Mobile */
+@media screen and (max-width: 700px) {
+  form input {
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+  }
+  #select_semester {
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+  }
+  #gradify_title {
+    /* position: relative;
+    bottom: 100px; */
+    text-align: center;
+    font-size: 25px;
+  }
+  #submit_button {
+    margin-left: 45%;
+  }
+  #input_label {
+    margin-left: 25%;
+  }
+  #load_msg {
+    margin-left: 47%;
+    top: 500px;
+    /* position:fixed; */
+  }
+  /* #view_button {
+    position: relative;
+    bottom: 15px;
+    margin-left: 40%;
+  } */
+  /* #send_mail {
+    position: relative;
+    bottom: 50px;
+    margin-left: 10%;
+    font-size: 25px;
+  } */
 }
+/* Responcive Mobile */
+
+
 
 /* Confettis */
-
-
 
 #confettis {
     overflow: hidden;
@@ -207,45 +250,6 @@ form input {
   }
 
   /* Confettis */
-@media screen and (max-width: 500px) {
-  form input {
-    width: 50%;
-    text-align: center;
-    margin-left: 25%;
-  }
-  #select_semester {
-    width: 50%;
-    text-align: center;
-    margin-left: 25%;
-  }
-  #gradify_title {
-    position: relative;
-    bottom: 100px;
-    font-size: 25px;
-  }
-  #submit_button {
-    margin-left: 45%;
-  }
-  #input_label {
-    margin-left: 25%;
-  }
-  #load_msg {
-    margin-left: 47%;
-    top: 500px;
-    /* position:fixed; */
-  }
-  #view_button {
-    position: relative;
-    bottom: 15px;
-    margin-left: 60%;
-  }
-  #send_mail {
-    position: relative;
-    bottom: 50px;
-    margin-left: 10%;
-    font-size: 25px;
-  }
-}
 
 .tooltip {
   position: relative;
