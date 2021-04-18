@@ -8,6 +8,22 @@ body {
     justify-items: center;
     background-image: linear-gradient(to top, rgb(11, 21, 53) 0%, rgb(83, 223, 199) 100%);
   }
+
+  #gradify_title {
+    position: absolute;
+    top: 30px;
+    color: white;
+    margin-left: 350px;
+  }
+
+  .pacificofont {
+    font-family: pacifico;
+    font-size: 50px;
+  }
+  .straightfont {
+    font-size: 50px;
+  } 
+
   .card1 {
     background: #fff;
     border-radius: 20px;
@@ -119,7 +135,7 @@ body {
     height: 100%;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    background-image: url('src/assets/images/vikasprofile.jpg');
+    background-image: url('src/assets/images/vj.jpg');
     background-position: bottom center;
 
     background-size: cover;
@@ -143,5 +159,15 @@ body {
     cursor: pointer;
     transition:.5s;
 
+  }
+
+  @media screen and (max-width: 500px) {
+    #gradify_title {
+      position: absolute;
+      top: 120px;
+      color: white;
+      margin-left: 150px;
+      font-size: 35px;
+    }
   }
   

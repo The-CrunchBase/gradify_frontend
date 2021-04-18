@@ -19,98 +19,91 @@
 
     <!-- Body -->
     <body>
-        <div *ngIf="show_form===false">
+        <div class="container">
+            <div *ngIf="show_popupform===true">
 
-            <!-- Confetti -->
-            <div id="confettis">
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
+                <!-- Confetti -->
+                <div id="confettis">
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                </div>
+                <!-- Confetti -->
             </div>
-            <!-- Confetti -->
-        </div>
 
-        <div class="intro">
+            <div class="intro">
 
-            <!-- Title -->
-            <link rel="preconnect" href="https://fonts.gstatic.com">
-            <h1>
-                <span id="gradify_title" class="pacificofont">gradify&nbsp;</span>
-                <span id="gradify_title" class="straightfont">| devMonks </span>
-            </h1>
+                <!-- Title -->
+                <link rel="preconnect" href="https://fonts.gstatic.com">
+                <h1>
+                    <span id="gradify_title" class="pacificofont">Calculate CGPA</span>
+                </h1>
 
-            <!-- Form -->
-            <div class="content">
-                <div class="container">
-                    <br>
-                    <form #cgpaForm="ngForm" (ngSubmit)="onSubmit(cgpaForm)">
-                        <!-- Popup Form -->
-                        <div *ngIf="show_popupform===true">
+                <!-- Form -->
+                <br>
+                <form #cgpaForm="ngForm" (ngSubmit)="onSubmit(cgpaForm)">
+                    <!-- Popup Form -->
+                    <div *ngIf="show_popupform===true">
 
-                            <div id="model_popup" class="fancy">
-                                <p style="text-align:center;font-size: 22px"><b>&nbsp;Congratulations...</b>
-                                    <a (click)="onClose()" class="close">&times;</a></p>
-                                <hr>
-                                <!-- if Result Calculated Successfully -->
-                                <div>
-                                    <p id="sgpa"
-                                        style="text-align:center;font-size:
-                                        22px;"><b>{{cgpa}}</b></p><br><hr>
-                                </div>
+                        <div id="model_popup" class="fancy">
+                            <p style="text-align:center;font-size: 22px"><b>&nbsp;Congratulations...</b>
+                                <a (click)="onClose()" class="close">&times;</a></p>
+                            <hr>
+                            <!-- if Result Calculated Successfully -->
+                            <div>
+                                <p id="sgpa"
+                                    style="text-align:center;font-size:
+                                    22px;"><b>{{cgpa}}</b></p><br><hr>
                             </div>
                         </div>
-                        <!-- Popup Form -->
+                    </div>
+                    <!-- Popup Form -->
 
-                        <!-- Show Inputs -->
+                    <!-- Show Inputs -->
+                    <div id="input_form">
                         <div *ngIf="show_inputs===true">
                             <form #inputForm="ngForm"
-                                (ngSubmit)="onSubmit(inputForm)">
+                                (ngSubmit)="calculateCGPA(inputForm)">
                                 <!-- SGPA Number Input -->
-                                <div *ngFor="let sem of semester">
-                                    {{sem}}
+                                <div *ngFor="let sem of sem_list">
                                     <div class="form-group">
                                         <label id="input_label"
-                                            style="color:aqua" for="reg"></label>
-                                        <input #reg="ngModel"
+                                            style="color:aqua" for="sem_cgpa">{{sem.key}}</label>
+                                        <input #sem_cgpa="ngModel"
                                             required
                                             type="text" class="form-control"
-                                            id="reg"
+                                            id="sem_cgpa"
                                             autocomplete="off"
-                                            aria-describedby="reg"
-                                            placeholder="Enter Your SGPA"
-                                            ngModel name="reg">
-                                        <span id="input_label"
-                                            *ngIf="reg.invalid && reg.touched"
-                                            style="color:red"><b>**Please
-                                                Enter Your Correct Registration
-                                                Number</b></span>
+                                            aria-describedby="sem_cgpa"
+                                            placeholder={{sem.value}}
+                                            ngModel name={{sem.key}}>
                                     </div>
                                 </div>
                                 <!-- SGPA Number Input -->
@@ -143,16 +136,19 @@
                                 <!-- Submit Button -->
                             </form>
                         </div>
+                    </div>
 
-                        <!-- Show Inputs -->
+                    <!-- Show Inputs -->
 
 
-                        <br>
-                        <div *ngIf="show_form===true">
+                    <br>
 
-                            <!-- Select Semester -->
+                    <div *ngIf="show_form===true">
+
+                        <!-- Select Semester -->
+                        <div id="select_semester_form">
                             <label id="input_label" style="color:aqua"
-                                for="sem">Select your passed semester
+                                for="sem">Select your last passed semester
                             </label>
                             <div id="select_semester" class="select"
                                 class="input-group mb-3">
@@ -197,14 +193,15 @@
                             <!-- After clicking loading button -->
 
                             <!-- Submit Button -->
-
                         </div>
-                    </form>
 
-                </div>
+                    </div>
+                </form>
+
+
+                <!-- Form -->
+
             </div>
-            <!-- Form -->
-
         </div>
     </body>
     <!-- Body -->

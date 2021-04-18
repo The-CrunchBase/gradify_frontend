@@ -21,8 +21,11 @@ export class CalculateCGPAComponent implements OnInit {
   show_popupform = false;
   user_result;
   pdf_load_msg;
+  val;
   sems;
-  dict = [];
+  sum = 0;
+  sgpa;
+  sem_list= [{key:"key", value:"value"}];
   public semList:{sem:string, year:string, value:string}[] = sems;
 
   constructor(private http:HttpClient) { }
@@ -31,10 +34,30 @@ export class CalculateCGPAComponent implements OnInit {
     this.semester = data.value.sem;
     console.log(this.semester);
     for(var i=1;i<=this.semester;i++){
-      this.dict.push();
+      this.sem_list.push({
+        key:   "SEM"+i,
+        value: "Enter Your SEM"+i+" SGPA"
+    });
     }
+    this.sem_list.splice(0,1);
+    console.log(this.sem_list);
     this.show_form = false;
     this.show_inputs = true;
+  }
+
+  calculateCGPA(data){
+    this.sum = 0;
+    for(var i=1;i<=this.semester;i++){
+      this.val = "SEM"+i,
+      this.sgpa = +data.value[this.val];
+      this.sum = this.sum + this.sgpa;
+      console.log(this.sum);
+    }
+    this.cgpa = (this.sum/this.semester).toFixed(2);
+    console.log(this.cgpa);
+    this.show_popupform=true;
+    this.show_form = false;
+    this.show_inputs = false;
   }
 
   
@@ -45,7 +68,9 @@ export class CalculateCGPAComponent implements OnInit {
   }
 
   onClose(){
-    this.show_form=true;
+    this.show_popupform=false;
+    this.show_form = false;
+    this.show_inputs = true;
   }
 
   ngOnInit(): void {
