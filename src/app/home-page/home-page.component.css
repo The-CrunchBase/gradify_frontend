@@ -1,5 +1,5 @@
 body {
-  background-image: url('src/assets/images/background.jpg');
+  background-image: url('src/assets/images/c.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -103,7 +103,7 @@ form input {
     /* position: relative;
     bottom: 100px; */
     text-align: center;
-    font-size: 25px;
+    font-size: 50px;
   }
   #submit_button {
     margin-left: 45%;

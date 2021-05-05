@@ -1,189 +1,100 @@
 body {
-    font-family: Roboto, sans-serif;
-    margin: 0;
-    height: 100vh;
-    display: grid;
-    grid-gap: 30px 50px;
-    align-items: center;
-    justify-items: center;
-    background-image: linear-gradient(to top, rgb(11, 21, 53) 0%, rgb(83, 223, 199) 100%);
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+  font-family: "Montserrat", sans-serif;
+  color: #05103b;
+  background: #05103b;
+}
 
-  .intro {
-    height: 100vh;
-  }
+.intro {
+  height: 100vh;
+}
 
-  .intro h1 {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%);
-    text-align: justify;
-    font-size: 70px;
-    color: white;
-  }
+body h1 {
+  color: #fff;
+  font-family: "Pacifico";
+}
+body .canvas {
+  position: relative;
+  margin-top: 40px;
+}
+body .canvas .circle {
+  position: absolute;
+  border-radius: 50%;
+}
+body .canvas .circle:first-child {
+  width: 200px;
+  height: 200px;
+  right: -10%;
+  top: -10%;
+  background: linear-gradient(125deg, #ff3838 42%, #05103b 100%);
+}
+body .canvas .circle:last-child {
+  width: 130px;
+  height: 130px;
+  left: -5%;
+  bottom: -20%;
+  background: linear-gradient(37deg, #ff3838 42%, #05103b 100%);
+}
+body .canvas .card {
+  width: 330px;
+  height: 207px;
+  display: grid;
+  grid: 1fr 1fr 1fr/1fr 1fr;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  padding: 10px 20px;
+  overflow: hidden;
+  box-shadow: 0 0 20px 0 rgba(5, 16, 59, 0.3);
+  background: linear-gradient(40deg, transparent 10%, rgba(255, 255, 255, 0.16) 60%, transparent 100%);
+  -webkit-backdrop-filter: blur(7px);
+          backdrop-filter: blur(7px);
+  border-radius: 10px;
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+}
+body .canvas .card .logo {
+  width: 60px;
+}
+body .canvas .card .chip {
+  width: 50px;
+  justify-self: end;
+}
+body .canvas .card .text {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  background: linear-gradient(#fff, #686868);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+body .canvas .card .text.number {
+  grid-column: 1/3;
+  align-self: end;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+body .canvas .card .text.name {
+  text-transform: uppercase;
+  font-size: 18px;
+}
+body .canvas .card .text{
+  justify-self: end;
+  font-size: 20px;
+}
 
-  /* #gradify_title {
-    position: absolute;
-    top: 30px;
-    color: white;
-    margin-left: 350px;
-  } */
-
-  .pacificofont {
-    font-family: pacifico;
-    font-size: 50px;
-  }
-  .straightfont {
-    font-size: 50px;
-  } 
-
-  @media screen and (max-width: 500px) {
-    /* #gradify_title {
-      position: absolute;
-      top: 120px;
-      color: white;
-      margin-left: 150px;
-      font-size: 35px;
-    } */
-  }
-  
-
-  .card1 {
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0px 14px 80px rgba(27, 30, 77, 0.5);
-    max-width: 400px;
-    display: flex;
-    flex-direction: row;
-
-    position: relative;
-    padding: 1rem;
-    margin-bottom: 50px;
-  }
-  .card2 {
-    background: #fff;
-    
-    box-shadow: 0px 14px 80px rgba(27, 30, 77, 0.5);
-    max-width: 400px;
-    display: flex;
-    padding-top: 40px;
-    flex-direction: row;
-    border-radius: 20px;
-    position: relative;
-    padding: 1rem;
-    margin-top:30px;
-  }
-  .card1 h2 {
-    margin: 0;
-    padding: 0 1rem;
-  }
-  .card1 .title {
-    padding: 1rem;
-    text-align: right;
-    color: black;
-    font-weight: bold;
-    font-size: 12px;
-  }
-  .card2 h2 {
-    margin: 0;
-    padding: 0 1rem;
-  }
-  .card2 .title {
-    padding: 1rem;
-    text-align: right;
-    color: black;
-    font-weight: bold;
-    font-size: 12px;
-  }
-  .card1 .desc {
-    padding: 0.5rem 1rem;
-    font-size: 12px;
-  }
-  .card1 .actions {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    padding: 0.5rem 1rem;
-  }
-  .card2 .desc {
-    padding: 0.5rem 1rem;
-    font-size: 12px;
-  }
-  .card2 .actions {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    padding: 0.5rem 1rem;
-  }
-  .card1 svg {
-    width: 85px;
-    height: 85px;
-    margin: 0 auto;
-  }
-  .card2 svg {
-    width: 85px;
-    height: 85px;
-    margin: 0 auto;
-  }
-  
-  .img-avatar {
-    width: 80px;
-    height: 80px;
-    position: absolute;
-    border-radius: 50%;
-    border: 6px solid white;
-    background-image: linear-gradient(-60deg, #16a085 0%, rgb(131, 39, 235) 100%);
-    top: 15px;
-    left: 85px;
-  }
-  
-  .card-text {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-  }
-  
-  .title-total {
-    padding: 2.5em 1.5em 1.5em 1.5em;
-  }
-  
-  path {
-    fill: white;
-  }
-  
-  .img-portada {
-    width: 100%;
-  }
-  
-  .portada1 {
-    width: 100%;
-    height: 100%;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    background-image: url('src/assets/images/vj.jpg');
-    background-position: bottom center;
-
-    background-size: cover;
-  }
-  .portada2 {
-    width: 100%;
-    height: 100%;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    background-image: url('src/assets/images/dhirajprofile.jpg');
-    background-position: bottom center;
-
-    background-size: cover;
-  }
-  
-  button {
-    border: none;
-    background: none;
-    font-size: 24px;
-    color: #8bc34a;
-    cursor: pointer;
-    transition:.5s;
-
-  }
-
- 
+.fa-instagram {
+  position: absolute;
+  top: 3%;
+  right: 2%;
+  color: #fff;
+  font-size: 38px;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+.fa-instagram:hover {
+  color: #ff3838;
+  font-size: 42px;
+}
