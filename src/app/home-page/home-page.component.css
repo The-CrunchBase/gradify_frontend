@@ -1,9 +1,43 @@
 body {
-  background-image: url('src/assets/images/c.jpg');
+  background-image: url('src/assets/images/p.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  /* transform:rotateX(180deg); */
 }
+
+/* Bounce Title */
+.stage {
+  /* border-bottom: 3px solid #444; */
+  display: flex;
+  height: 230px;
+  width: 100%;
+}
+.box {
+  align-self: flex-end;
+  animation-duration: 2s;
+  animation-iteration-count: 3;
+  height: 200px;
+  margin: 0 auto 0 auto;
+  transform-origin: bottom;
+  width: 200px;
+}
+.bounce-5 {
+  animation-name: bounce-5;
+  animation-timing-function: ease;
+}
+@keyframes bounce-5 {
+  0%   { transform: scale(1,1)    translateY(0); }
+  10%  { transform: scale(1.1,.9) translateY(0); }
+  30%  { transform: scale(.9,1.1) translateY(-100px); }
+  50%  { transform: scale(1,1)    translateY(0); }
+  57%  { transform: scale(1,1)    translateY(-7px); }
+  64%  { transform: scale(1,1)    translateY(0); }
+  100% { transform: scale(1,1)    translateY(0); }
+}
+/* Bounce Title */
+
+
 .intro {
   height: 100vh;
 }
@@ -15,8 +49,8 @@ body {
 }
 
 .intro h1 {
-  position: fixed;
-  top: 30%;
+  position: absolute;
+  top: 25%;
   left: 50%;
   transform: translate(-50%);
   text-align: justify;
@@ -51,7 +85,7 @@ input.ng-valid {
 form input {
   width: 70%;
   text-align: center;
-  margin-left: 10%;
+  margin-left: 15%;
 }
 
 #video-bg {
@@ -60,14 +94,14 @@ form input {
 #select_semester {
   width: 70%;
   text-align: center;
-  margin-left: 10%;
+  margin-left: 15%;
 }
 
 #submit_button {
-  margin-left: 40%;
+  margin-left: 45%;
 }
 #input_label {
-  margin-left: 10%;
+  margin-left: 15%;
 }
 
 #load_msg {
@@ -90,14 +124,22 @@ form input {
 /* Responcive Mobile */
 @media screen and (max-width: 700px) {
   form input {
-    width: 50%;
+    width: 40%;
+    height: 45px;
     text-align: center;
-    margin-left: 25%;
+    margin-left: 30%;
   }
+  
   #select_semester {
-    width: 50%;
+    width: 40%;
+    height: 45px;
     text-align: center;
-    margin-left: 25%;
+    margin-left: 30%;
+  }
+
+  #inputGroupSelect01{
+    width: 70%;
+    height: 45px;
   }
   #gradify_title {
     /* position: relative;
@@ -109,7 +151,7 @@ form input {
     margin-left: 45%;
   }
   #input_label {
-    margin-left: 25%;
+    margin-left: 30%;
   }
   #load_msg {
     margin-left: 47%;
@@ -297,6 +339,9 @@ form input {
   border-radius: 25px;
   top: auto;
   background-color: #fcfcfa;
+  /* background: white; */
+  /* opacity: 50%;
+  z-index: 1; */
 }
 /* Model Popup */
 

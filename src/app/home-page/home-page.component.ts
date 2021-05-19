@@ -40,10 +40,10 @@ export class HomePageComponent implements OnInit {
       this.msg = this.sgpa.msg
       this.user_result = this.sgpa.data;
       if(this.msg == "Please enter valid Registration Number")  {
-        this.sgpa = "**Please enter valid working registration number"
+        this.sgpa = "**Please enter valid credentials"
       }
       if(this.msg == "Result Not Found")  {
-        this.sgpa = "**Result Not Found"
+        this.sgpa = "**Result Not Found**"
       }
       if(this.msg == "SGPA is calculated successfully") {
         this.sgpa = "Your SGPA is "+this.sgpa.data['sgpa']

@@ -59,8 +59,8 @@
 
       <!-- Title -->
       <link rel="preconnect" href="https://fonts.gstatic.com">
-      <h1>
-        <span style="text-align: center;" id="gradify_title" class="pacificofont">gradify&nbsp;</span>
+      <h1 class="stage">
+        <span style="text-align: center;" id="gradify_title" class="pacificofont box bounce-5">gradify&nbsp;</span>
       </h1>
       <!-- <p>I will display &#65; &#66; &#67;</p>  -->
 
@@ -83,13 +83,16 @@
             <div *ngIf="show_form===false">
 
               <div id="model_popup" class="fancy">
-                <p style="text-align:center;font-size: 22px"><b>&nbsp;Congratulations...</b>
-                  <a (click)="onClose()" class="close">&times;</a></p>
-                <hr>
+              
 
                 <!-- if Result Calculated Successfully -->
+              
                 <div *ngIf="msg==='SGPA is calculated successfully' ||
                   mail===true">
+                  <p style="text-align:center;font-size: 22px"><b>&nbsp;Congratulations...</b>
+                    <a (click)="onClose()" class="close">&times;</a></p>
+                <hr>
+
                   <p id="sgpa" style="text-align:center;font-size:
                     22px;"><b>{{sgpa}}</b></p><br><hr>
 
@@ -133,16 +136,22 @@
 
                 <!-- if Registration Number is Wrong -->
                 <div *ngIf="msg==='Please enter valid Registration Number'">
+                  <p style="text-align:center;font-size: 22px"><b>&nbsp;Wrong Credentials...</b>
+                    <a (click)="onClose()" class="close">&times;</a></p>
+                    <hr>
                   <p id="sgpa" style="text-align:center;font-size:
-                    22px;color:red;"><b>{{sgpa}}</b></p><br><hr>
+                    22px;color:red;"><b>{{sgpa}}</b></p><br>
                 </div>
                 <!-- if Registration Number is Wrong -->
 
 
                 <!-- if Result Not Found -->
                 <div *ngIf="msg==='Result Not Found'">
+                  <p style="text-align:center;font-size: 22px"><b>&nbsp;Try contacting Student Section...</b>
+                    <a (click)="onClose()" class="close">&times;</a></p>
+                    <hr>
                   <p id="sgpa" style="text-align:center;font-size:
-                    22px;color:red;"><b>{{sgpa}}</b></p><br><hr>
+                    22px;color:red;"><b>{{sgpa}}</b></p><br>
                 </div>
                 <!-- if Result Not Found -->
 
@@ -187,7 +196,7 @@
                 Semester</label>
               <div id="select_semester" class="select" class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <label class="input-group-text" for="inputGroupSelect01">SEMESTER</label>
+                  <label class="input-group-text" for="inputGroupSelect01">SEM</label>
                 </div>
                 <select required name="sem" ngModel class="custom-select"
                   id="inputGroupSelect01">
@@ -204,7 +213,7 @@
               <!-- Initial Calculate button -->
               <ng-template #other_content>
                 <button id="submit_button" type="submit"
-                  [disabled]="gradeForm.invalid" class="btn btn-outline-info">Calculate</button>
+                  [disabled]="gradeForm.invalid" class="btn btn-info">Calculate</button>
               </ng-template>
               <!-- Initial Calculate button -->
 
