@@ -10,7 +10,7 @@ import sems from 'src/assets/json/sem.json';
 export class HomePageComponent implements OnInit {
 
   hosted_url = "https://crunchbase-gradify.herokuapp.com"
-  // local_url = "http://localhost:8000"
+  // hosted_url = "http://localhost:8000"
   sgpa;
   msg;
   pdf_link;

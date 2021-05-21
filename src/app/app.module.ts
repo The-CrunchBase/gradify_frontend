@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CalculateCGPAComponent } from './calculate-cgpa/calculate-cgpa.component';
 import { DevelopersComponent } from './developers/developers.component';
+import { FYPageComponent } from './fypage/fypage.component';
+import { FeedbackPageComponent } from './feedback-page/feedback-page.component';
 // My Modules
 
 
@@ -18,7 +20,9 @@ import { DevelopersComponent } from './developers/developers.component';
     AppComponent,
     HomePageComponent,
     CalculateCGPAComponent,
-    DevelopersComponent
+    DevelopersComponent,
+    FYPageComponent,
+    FeedbackPageComponent
   ],
   imports: [
     BrowserModule,
