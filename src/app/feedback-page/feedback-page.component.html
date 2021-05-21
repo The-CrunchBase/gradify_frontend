@@ -1,0 +1,31 @@
+<head></head>
+<body>
+    <div class="intro">
+        <div style="position:relative;top:180px;" onclick="change()" class="form">
+            <div class="mail"></div>
+            <h1>speak us!</h1>
+            <form #feedbackForm="ngForm" (ngSubmit)="feedback(feedbackForm)">
+                <input #name="ngModel" required
+                type="text" class="form-control"
+                id="name" autocomplete="off"
+                aria-describedby="name" ngModel name="name" type="text" placeholder="Your name" />
+        
+                <textarea #feed="ngModel" required
+                type="text" class="form-control"
+                id="feed"  autocomplete="off"
+                aria-describedby="reg" ngModel name="feed" cols="30" rows="10" placeholder="convey us your ideas!"></textarea>
+                <!-- <div class="submit">good ?</div> -->
+                <!-- <button styclass="submit" type="submit">Good?</button> -->
+                <button class="submit" id="submit_button" type="submit"
+                [disabled]="feedbackForm.invalid" >Good!</button>
+         
+    
+            </form>
+        </div>
+    
+        <div class="ok_message">
+            <span>you've done a work of bravery!</span></div>
+    </div>
+</body>
+
+<router-outlet></router-outlet>
