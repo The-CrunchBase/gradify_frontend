@@ -39,7 +39,7 @@ body {
 
 
 .intro {
-  height: 100vh;
+  height: 85vh;
 }
 
 .intro video {
@@ -339,6 +339,7 @@ form input {
   border-radius: 25px;
   top: auto;
   background-color: #fcfcfa;
+
   /* background: white; */
   /* opacity: 50%;
   z-index: 1; */

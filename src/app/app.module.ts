@@ -12,6 +12,7 @@ import { CalculateCGPAComponent } from './calculate-cgpa/calculate-cgpa.componen
 import { DevelopersComponent } from './developers/developers.component';
 import { FYPageComponent } from './fypage/fypage.component';
 import { FeedbackPageComponent } from './feedback-page/feedback-page.component';
+import { MaintenancePageComponent } from './maintenance-page/maintenance-page.component';
 // My Modules
 
 
@@ -22,7 +23,8 @@ import { FeedbackPageComponent } from './feedback-page/feedback-page.component';
     CalculateCGPAComponent,
     DevelopersComponent,
     FYPageComponent,
-    FeedbackPageComponent
+    FeedbackPageComponent,
+    MaintenancePageComponent
   ],
   imports: [
     BrowserModule,

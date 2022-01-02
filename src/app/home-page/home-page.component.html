@@ -183,7 +183,7 @@
                   Number</label>
                 <input #reg="ngModel" pattern="\d\d\d\d\w\w\w\d\d\d" required
                   type="text" class="form-control"
-                  id="reg" onblur="uppercase()" autocomplete="off"
+                  id="reg" onblur="uppercase()" 
                   aria-describedby="reg" placeholder="Enter Your Registration Number" ngModel name="reg">
                 <span id="input_label" *ngIf="reg.invalid && reg.touched"
                   style="color:red"><b>**Please

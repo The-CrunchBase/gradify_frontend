@@ -5,8 +5,13 @@ import { DevelopersComponent } from './developers/developers.component';
 import { CalculateCGPAComponent } from './calculate-cgpa/calculate-cgpa.component';
 import { FYPageComponent } from './fypage/fypage.component';
 import { FeedbackPageComponent } from './feedback-page/feedback-page.component';
+import { MaintenancePageComponent } from './maintenance-page/maintenance-page.component';
 
 const routes: Routes = [
+  {
+    path: "maintenance",
+    component: MaintenancePageComponent
+  },
   {
     path: "feedback",
     component: FeedbackPageComponent
@@ -29,7 +34,7 @@ const routes: Routes = [
   },
   {
     path: "",
-    component: FYPageComponent
+    component: HomePageComponent
   },
 ];
 
