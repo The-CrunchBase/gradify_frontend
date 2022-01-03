@@ -6,8 +6,13 @@ import { CalculateCGPAComponent } from './calculate-cgpa/calculate-cgpa.componen
 import { FYPageComponent } from './fypage/fypage.component';
 import { FeedbackPageComponent } from './feedback-page/feedback-page.component';
 import { MaintenancePageComponent } from './maintenance-page/maintenance-page.component';
+import { AnalyzerComponent } from './analyzer/analyzer.component';
 
 const routes: Routes = [
+  {
+    path: "analyzer/:reg/:branch/:sem/:sgpa/:name",
+    component: AnalyzerComponent
+  },
   {
     path: "maintenance",
     component: MaintenancePageComponent

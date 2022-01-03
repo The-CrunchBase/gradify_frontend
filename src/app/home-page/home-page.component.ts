@@ -11,6 +11,9 @@ export class HomePageComponent implements OnInit {
 
   hosted_url = "https://crunchbase-gradify.herokuapp.com"
   // hosted_url = "http://localhost:8000"
+  // frontend_url = "http://localhost:4200"
+  frontend_url = "https://gradify-crunchbase.web.app/"
+
   sgpa;
   msg;
   pdf_link;
@@ -39,6 +42,7 @@ export class HomePageComponent implements OnInit {
       this.sgpa = result
       this.msg = this.sgpa.msg
       this.user_result = this.sgpa.data;
+      // console.log("My Result 1 === ",this.user_result['branch'])
       if(this.msg == "Please enter valid Registration Number")  {
         this.sgpa = "**Please enter valid credentials"
       }
@@ -54,9 +58,14 @@ export class HomePageComponent implements OnInit {
     })
   }
 
+  analyze(){
+    location.replace(this.frontend_url + "/analyzer/"+this.user_result['registration_number'] + '/' +this.user_result['branch'] + '/' +this.user_result['semister']+ '/' +this.user_result['sgpa']+ '/' +this.user_result['name'])
+  }
+
   savePdf(){
       this.mail = false
       this.pdf_loading = true;
+      // console.log("My Result 2 === ",this.user_result.branch)
       console.log("pdf generating....")
       return this.http.post(this.hosted_url+"/pdf/",this.user_result).subscribe((result)=>{
           console.log("pdf genereted....")

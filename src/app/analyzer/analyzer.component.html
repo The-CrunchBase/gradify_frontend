@@ -1,0 +1,111 @@
+<body>
+    <div class="intro">
+        <!-- Confetti -->
+      <div id="confettis">
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+      </div>
+      <!-- Confetti -->
+      
+        <br>
+        <br>
+        <br>
+
+        <br>
+        <div class="container">
+            <h1 style="color:rgb(0, 255, 200);text-align: center;"><b> Top
+                    Rankers
+                    {{branch}} {{sem}}</b></h1>
+            <br>
+            <br>
+            <br>
+            <table class="table-light table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Registration Number</th>
+                        <th scope="col">SGPA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row"><img height="50px" width="50px"
+                                src="assets/images/medals.jpg"></th>
+                        <td>{{sgpa_list[0][0]}}</td>
+                        <td>{{sgpa_list[0][1]}}</td>
+                        <td>{{sgpa_list[0][2]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><img height="50px" width="50px"
+                                src="assets/images/medals (1).jpg"></th>
+                        <td>{{sgpa_list[1][0]}}</td>
+                        <td>{{sgpa_list[1][1]}}</td>
+                        <td>{{sgpa_list[1][2]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><img height="50px" width="50px"
+                                src="assets/images/medals (2).jpg"></th>
+                        <td>{{sgpa_list[2][0]}}</td>
+                        <td>{{sgpa_list[2][1]}}</td>
+                        <td>{{sgpa_list[2][2]}}</td>
+                    </tr>
+                    <!-- <div> -->
+                    <tr *ngIf="showYourRank">
+                        <th scope="row">.</th>
+                        <td>.</td>
+                        <td>.</td>
+                        <td>.</td>
+                    </tr>
+                    <tr *ngIf="showYourRank">
+                        <th scope="row">.</th>
+                        <td>.</td>
+                        <td>.</td>
+                        <td>.</td>
+                    </tr>
+                    <tr *ngIf="showYourRank">
+                        <th scope="row">.</th>
+                        <td>.</td>
+                        <td>.</td>
+                        <td>.</td>
+                    </tr>
+                    <tr *ngIf="showYourRank">
+                        <th scope="row">{{rank}}</th>
+                        <td>{{name}}</td>
+                        <td>{{reg}}</td>
+                        <td>{{sgpa}}</td>
+                    </tr>
+                    <!-- </div> -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>

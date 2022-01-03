@@ -60,7 +60,8 @@
       <!-- Title -->
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <h1 class="stage">
-        <span style="text-align: center;" id="gradify_title" class="pacificofont box bounce-5">gradify&nbsp;</span>
+        <span style="text-align: center;" id="gradify_title" class="pacificofont
+          box bounce-5">gradify&nbsp;</span>
       </h1>
       <!-- <p>I will display &#65; &#66; &#67;</p>  -->
 
@@ -83,15 +84,15 @@
             <div *ngIf="show_form===false">
 
               <div id="model_popup" class="fancy">
-              
+
 
                 <!-- if Result Calculated Successfully -->
-              
+
                 <div *ngIf="msg==='SGPA is calculated successfully' ||
                   mail===true">
                   <p style="text-align:center;font-size: 22px"><b>&nbsp;Congratulations...</b>
                     <a (click)="onClose()" class="close">&times;</a></p>
-                <hr>
+                  <hr>
 
                   <p id="sgpa" style="text-align:center;font-size:
                     22px;"><b>{{sgpa}}</b></p><br><hr>
@@ -119,6 +120,14 @@
                         bi-envelope" title="Receive Gradecard on Mail"></i></a>
                     <!-- Send Mail Button -->
 
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <!-- Rank Button -->
+                    <a style="font-size:
+                      22px;color:blue;position:relative;top:20px;"
+                      id="send_mail" (click)="analyze()"><i class="bi-award"
+                        title="Your Rank"></i></a>
+                    <!-- Rank Button -->
+
                   </ng-template>
                   <!-- Initial View full result button -->
 
@@ -136,9 +145,10 @@
 
                 <!-- if Registration Number is Wrong -->
                 <div *ngIf="msg==='Please enter valid Registration Number'">
-                  <p style="text-align:center;font-size: 22px"><b>&nbsp;Wrong Credentials...</b>
+                  <p style="text-align:center;font-size: 22px"><b>&nbsp;Wrong
+                      Credentials...</b>
                     <a (click)="onClose()" class="close">&times;</a></p>
-                    <hr>
+                  <hr>
                   <p id="sgpa" style="text-align:center;font-size:
                     22px;color:red;"><b>{{sgpa}}</b></p><br>
                 </div>
@@ -147,9 +157,10 @@
 
                 <!-- if Result Not Found -->
                 <div *ngIf="msg==='Result Not Found'">
-                  <p style="text-align:center;font-size: 22px"><b>&nbsp;Try contacting Student Section...</b>
+                  <p style="text-align:center;font-size: 22px"><b>&nbsp;Try
+                      contacting Student Section...</b>
                     <a (click)="onClose()" class="close">&times;</a></p>
-                    <hr>
+                  <hr>
                   <p id="sgpa" style="text-align:center;font-size:
                     22px;color:red;"><b>{{sgpa}}</b></p><br>
                 </div>
@@ -157,7 +168,8 @@
 
 
                 <!-- Mail Checkmark -->
-                <div style="position:relative;bottom:10px;margin-left:80px;" *ngIf="mail">
+                <div style="position:relative;bottom:10px;margin-left:80px;"
+                  *ngIf="mail">
                   <div class="swal2-icon swal2-success
                     swal2-animate-success-icon"
                     style="display: flex;">
@@ -183,8 +195,9 @@
                   Number</label>
                 <input #reg="ngModel" pattern="\d\d\d\d\w\w\w\d\d\d" required
                   type="text" class="form-control"
-                  id="reg" onblur="uppercase()" 
-                  aria-describedby="reg" placeholder="Enter Your Registration Number" ngModel name="reg">
+                  id="reg" onblur="uppercase()"
+                  aria-describedby="reg" placeholder="Enter Your Registration
+                  Number" ngModel name="reg">
                 <span id="input_label" *ngIf="reg.invalid && reg.touched"
                   style="color:red"><b>**Please
                     Enter Your Correct Registration Number</b></span>

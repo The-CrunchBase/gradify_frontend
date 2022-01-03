@@ -13,6 +13,8 @@ import { DevelopersComponent } from './developers/developers.component';
 import { FYPageComponent } from './fypage/fypage.component';
 import { FeedbackPageComponent } from './feedback-page/feedback-page.component';
 import { MaintenancePageComponent } from './maintenance-page/maintenance-page.component';
+import { AnalyzerComponent } from './analyzer/analyzer.component';
+
 // My Modules
 
 
@@ -24,7 +26,8 @@ import { MaintenancePageComponent } from './maintenance-page/maintenance-page.co
     DevelopersComponent,
     FYPageComponent,
     FeedbackPageComponent,
-    MaintenancePageComponent
+    MaintenancePageComponent,
+    AnalyzerComponent
   ],
   imports: [
     BrowserModule,
